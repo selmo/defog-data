@@ -9,7 +9,7 @@ logging.debug(f"script_dir: {script_dir}")
 def get_db(db_name):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(script_dir, f"{db_name}/{db_name}.json")
-    with open(file_path, "r") as f:
+    with open(file_path, "r", encoding='utf-8') as f:
         db_schema = json.load(f)
     return db_schema
 
